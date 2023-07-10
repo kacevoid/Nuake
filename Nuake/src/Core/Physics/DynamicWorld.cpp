@@ -290,7 +290,8 @@ namespace Nuake
 			settings->mGravityFactor = 0.0f;
 
 			auto& joltPos = JPH::Vec3(cc->Position.x, cc->Position.y, cc->Position.z);
-			JPH::Character* character = new JPH::Character(settings, joltPos, JPH::Quat::sIdentity(), cc->GetEntity().GetID() , _JoltPhysicsSystem.get());
+			auto& joltRot = JPH::Quat(cc->Rotation.x, cc->Rotation.y, cc->Rotation.z, cc->Rotation.w);
+			JPH::Character* character = new JPH::Character(settings, joltPos, joltRot, cc->GetEntity().GetID() , _JoltPhysicsSystem.get());
 
 			character->AddToPhysicsSystem(JPH::EActivation::Activate);
 			
@@ -439,24 +440,20 @@ namespace Nuake
 		{
 			_stepCount = 0;
 
-			if (_registeredBodies.empty())
+			if (!_registeredBodies.empty())
 			{
-				return;
-			}
-			
-			_JoltBodyInterface->RemoveBodies(reinterpret_cast<JPH::BodyID*>(_registeredBodies.data()), _registeredBodies.size());
-			_registeredBodies.clear();
-
-			if (_registeredCharacters.empty())
-			{
-				return;
+				_JoltBodyInterface->RemoveBodies(reinterpret_cast<JPH::BodyID*>(_registeredBodies.data()), _registeredBodies.size());
+				_registeredBodies.clear();
 			}
 
-			for (auto& character : _registeredCharacters)
+			if (!_registeredCharacters.empty())
 			{
-				character.second->RemoveFromPhysicsSystem();
+				for (auto& character : _registeredCharacters)
+				{
+					character.second->RemoveFromPhysicsSystem();
+				}
+				_registeredCharacters.clear();
 			}
-			_registeredCharacters.clear();
 		}
 
 		void DynamicWorld::MoveAndSlideCharacterController(const Entity& entity, const Vector3 velocity)
