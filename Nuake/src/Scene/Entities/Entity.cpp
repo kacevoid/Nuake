@@ -80,6 +80,7 @@ namespace Nuake
 		DESERIALIZE_COMPONENT(ParentComponent)
 		DESERIALIZE_COMPONENT(CameraComponent)
 		DESERIALIZE_COMPONENT(QuakeMapComponent)
+		DESERIALIZE_COMPONENT(PrefabComponent)
 		DESERIALIZE_COMPONENT(LightComponent)
 		DESERIALIZE_COMPONENT(ModelComponent)
 		DESERIALIZE_COMPONENT(WrenScriptComponent)

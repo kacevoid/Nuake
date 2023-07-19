@@ -15,6 +15,7 @@ namespace Nuake {
             BEGIN_SERIALIZE();
             SERIALIZE_VAL(Name);
             SERIALIZE_VAL(ID);
+            SERIALIZE_VAL(IsPrefab);
             END_SERIALIZE();
         }
 
@@ -24,9 +25,18 @@ namespace Nuake {
             Name = j["Name"];
 
             if (j.contains("ID"))
+            {
                 ID = j["ID"];
+            }
             else
+            {
                 ID = OS::GetTime();
+            }
+
+            if (j.contains("IsPrefab"))
+            {
+                IsPrefab = j["IsPrefab"];
+            }
 
             return true;
         }
