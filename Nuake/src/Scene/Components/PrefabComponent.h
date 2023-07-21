@@ -1,8 +1,9 @@
 #pragma once
 #include "src/Core/Core.h"
-#include "src/Resource/Prefab.h"
 
-namespace Nuake {
+namespace Nuake
+{
+	class Prefab;
 	class PrefabComponent
 	{
 	public:

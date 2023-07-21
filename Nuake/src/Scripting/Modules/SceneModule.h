@@ -104,7 +104,7 @@ namespace Nuake {
 
 				Entity& newEntity = Engine::GetCurrentScene()->CreateEntity(prefabName);
 				auto& prefabComponent = newEntity.AddComponent<PrefabComponent>();
-				prefabComponent.PrefabInstance = Prefab::New(prefabPath);
+				//prefabComponent.PrefabInstance = Prefab::New(prefabPath);
 
 				wrenSetSlotDouble(vm, 0, newEntity.GetHandle());
 			}

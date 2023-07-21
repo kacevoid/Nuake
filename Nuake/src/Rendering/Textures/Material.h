@@ -11,7 +11,8 @@
 
 namespace Nuake
 {
-	struct UBOStructure {
+	struct UBOStructure 
+	{
 		int u_HasAlbedo;
 		float padding;
 		float padding2;

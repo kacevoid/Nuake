@@ -122,6 +122,10 @@ namespace Nuake
 		auto window = Window::Get()->GetHandle();
 		auto state = glfwGetMouseButton(window, button);
 
+		if (m_MouseButtons[button] == false && state == GLFW_PRESS)
+		{
+			m_MouseButtons[button] = true;
+		}
 		return state == GLFW_RELEASE && m_MouseButtons[button] == true;
 	}
 

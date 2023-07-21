@@ -23,6 +23,7 @@ extern "C" {
 #include "src/Resource/FGD/FGDClass.h"
 #include "src/Scene/Components/WrenScriptComponent.h"
 #include "src/Scene/Components/PrefabComponent.h"
+#include "src/Resource/Prefab.h"
 #include "src/Scene/Components/ModelComponent.h"
 
 #include <vector>

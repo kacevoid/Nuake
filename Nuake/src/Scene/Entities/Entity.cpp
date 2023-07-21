@@ -14,6 +14,8 @@
 #include "src/Scene/Components/Components.h"
 #include <src/Scene/Components/BoxCollider.h>
 #include "src/Scene/Components/CapsuleColliderComponent.h"
+#include "src/Scene/Components/PrefabComponent.h"
+
 
 namespace Nuake
 {
@@ -80,7 +82,6 @@ namespace Nuake
 		DESERIALIZE_COMPONENT(ParentComponent)
 		DESERIALIZE_COMPONENT(CameraComponent)
 		DESERIALIZE_COMPONENT(QuakeMapComponent)
-		DESERIALIZE_COMPONENT(PrefabComponent)
 		DESERIALIZE_COMPONENT(LightComponent)
 		DESERIALIZE_COMPONENT(ModelComponent)
 		DESERIALIZE_COMPONENT(WrenScriptComponent)

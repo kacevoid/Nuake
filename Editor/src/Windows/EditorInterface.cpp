@@ -79,7 +79,7 @@ namespace Nuake {
     {
         ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
         std::string name = ICON_FA_GAMEPAD + std::string(" Scene");
-        if (ImGui::Begin(name.c_str()))
+        if (ImGui::Begin(name.c_str(), NULL))
         {
             ImGui::PopStyleVar();
 

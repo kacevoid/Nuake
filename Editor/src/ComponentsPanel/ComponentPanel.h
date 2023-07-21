@@ -1,7 +1,8 @@
 #pragma once
-#include "src/Scene/Entities/Entity.h"
-
 #include "../Misc/InterfaceFonts.h"
+
+#include <src/Scene/Entities/Entity.h>
+#include <src/Core/Maths.h>
 
 #include <src/Vendors/imgui/imgui.h>
 #include <src/Resource/FontAwesome5.h>

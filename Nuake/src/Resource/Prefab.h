@@ -6,7 +6,9 @@
 
 #include <string>
 #include <vector>
-namespace Nuake {
+#include <src/Scene/Components/PrefabComponent.h>
+namespace Nuake 
+{
 	class Prefab : ISerializable
 	{
 	public:
@@ -73,7 +75,7 @@ namespace Nuake {
 				{
 					Entity entity = Entity { Engine::GetCurrentScene()->m_Registry.create(), Engine::GetCurrentScene().get() };
 					entity.Deserialize(e.dump());
-					entity.AddComponent<PrefabComponent>().PrefabInstance = std::make_shared(this);
+					//entity.AddComponent<PrefabComponent>().PrefabInstance = std::make_shared(this);
 					this->AddEntity(entity);
 				}
 
