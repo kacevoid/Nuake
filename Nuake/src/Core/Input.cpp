@@ -126,6 +126,7 @@ namespace Nuake
 		{
 			m_MouseButtons[button] = true;
 		}
+
 		return state == GLFW_RELEASE && m_MouseButtons[button] == true;
 	}
 

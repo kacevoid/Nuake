@@ -74,7 +74,7 @@ namespace Nuake
 		Material();
 		Material(const std::string albedo);
 		Material(Ref<Texture> texture) { m_Albedo = texture; }
-		Material(const glm::vec3 albedoColor);
+		Material(const Vector3 albedoColor);
 		~Material();
 
 		void InitDefaultTextures();
